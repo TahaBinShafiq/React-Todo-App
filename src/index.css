@@ -1,5 +1,3 @@
-
-
 .todo-container {
   min-height: 100vh;
   display: flex;
@@ -150,4 +148,17 @@
   height: 24px;
   color: #4f46e5;
   /* text-indigo-600 ke liye */
+}
+
+.delete-icon svg {
+  width: 24px;
+  height: 24px;
+  color: #ef4444;
+  /* Red color for delete */
+}
+
+.icons{
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
