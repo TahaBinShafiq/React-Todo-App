@@ -1,0 +1,153 @@
+
+
+.todo-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  /* items-start ke liye */
+  justify-content: center;
+  padding-top: 5rem;
+  /* pt-20 ke liye */
+  background-color: #f3f4f6;
+  /* bg-gray-100 ke liye */
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.todo-card {
+  width: 100%;
+  max-width: 512px;
+  /* max-w-lg ke liye */
+  background-color: white;
+  padding: 2.5rem;
+  /* p-6/p-8 ke liye */
+  border-radius: 1rem;
+  /* rounded-2xl ke liye */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  /* shadow-2xl ke liye */
+  border: 1px solid #e5e7eb;
+  /* border-gray-200 ke liye */
+}
+
+.todo-heading {
+  font-size: 2.25rem;
+  /* text-4xl ke liye */
+  font-weight: 800;
+  /* font-extrabold ke liye */
+  color: #4338ca;
+  /* text-indigo-700 ke liye */
+  margin-bottom: 2rem;
+  /* mb-8 ke liye */
+  text-align: center;
+  border-bottom: 1px solid #e0e0e0;
+  /* border-b pb-3 ke liye */
+  padding-bottom: 0.75rem;
+}
+
+.input-group {
+  display: flex;
+  gap: 0.75rem;
+  /* space-x-3 ke liye */
+  margin-bottom: 2rem;
+  /* mb-8 ke liye */
+}
+
+.task-input {
+  flex-grow: 1;
+  padding: 0.75rem;
+  /* p-3 ke liye */
+  border: 1px solid #d1d5db;
+  /* border-gray-300 ke liye */
+  border-radius: 0.5rem;
+  /* rounded-lg ke liye */
+  outline: none;
+  transition: all 0.15s;
+  color: #374151;
+  /* text-gray-700 */
+}
+
+.task-input:focus {
+  border-color: #4f46e5;
+  /* focus:ring-indigo-500 ke liye */
+  box-shadow: 0 0 0 2px #c7d2fe;
+}
+
+.add-button {
+  background-color: #4f46e5;
+  /* bg-indigo-600 ke liye */
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  /* py-3 px-6 ke liye */
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.15s;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border: none;
+}
+
+.add-button:hover {
+  background-color: #4338ca;
+  /* hover:bg-indigo-700 ke liye */
+}
+
+.add-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.task-list {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  /* space-y-2 ke liye */
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f9fafb;
+  /* bg-gray-50 ke liye */
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  /* rounded-xl ke liye */
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  transition: all 0.2s;
+}
+
+.task-item:hover {
+  background-color: #eef2ff;
+  /* hover:bg-indigo-50 ke liye */
+}
+
+.task-text {
+  color: #1f2937;
+  /* text-gray-800 ke liye */
+  font-size: 1.125rem;
+  font-weight: 500;
+  word-break: break-word;
+  max-width: 85%;
+}
+
+.edit-icon {
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 9999px;
+  /* rounded-full ke liye */
+  transition: all 0.15s;
+}
+
+.edit-icon:hover {
+  background-color: #c7d2fe;
+  /* hover:bg-indigo-200 ke liye */
+}
+
+.edit-icon svg {
+  width: 24px;
+  height: 24px;
+  color: #4f46e5;
+  /* text-indigo-600 ke liye */
+}
