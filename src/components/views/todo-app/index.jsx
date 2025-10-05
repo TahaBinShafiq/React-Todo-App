@@ -10,9 +10,16 @@ function TodoApp() {
         setTask(tempTasks)
         setInputValue('');
     }
+
+
+    function deleteTask(index) {
+        console.log(index)
+        const tempTask = [...tasks]
+        tempTask.splice(index, 1)
+        setTask(tempTask)
+    }
     return (
         <div className="todo-container">
-
             {/* Todo Card/Box */}
             <div className="todo-card">
 
@@ -71,7 +78,7 @@ function TodoApp() {
                                 <div
                                     className="delete-icon"
                                     title="Delete Task"
-                                    onClick={() => deleteTask(task.id)} // Delete logic attach kiya
+                                    onClick={() => deleteTask(index)} // Delete logic attach kiya
                                 >
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
