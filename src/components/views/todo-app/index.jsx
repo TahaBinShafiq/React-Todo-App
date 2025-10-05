@@ -3,6 +3,7 @@ import { useState } from "react"
 function TodoApp() {
     const [inputValue, setInputValue] = useState("");
     const [tasks, setTask] = useState([]);
+    const [editTask, setEditTask] = useState(null)
 
     function addTask() {
         const tempTasks = [...tasks]
@@ -10,12 +11,33 @@ function TodoApp() {
         setTask(tempTasks)
         setInputValue('');
     }
-    
+
     function deleteTask(index) {
         console.log("delete Task index", index)
         const tempTask = [...tasks]
         tempTask.splice(index, 1)
         setTask(tempTask)
+    }
+
+    function startEdit(task, index) {
+        setInputValue(task)
+        setEditTask(index)
+    }
+
+    function saveEdit() {
+        const tempEdit = [...tasks];
+        tempEdit[editTask] = inputValue;
+        setTask(tempEdit);
+        setEditTask(null);
+        setInputValue('');
+    }
+
+    function checkEdit() {
+        if (editTask !== null) {
+            saveEdit();
+        } else {
+            addTask();
+        }
     }
 
 
@@ -36,13 +58,13 @@ function TodoApp() {
                     <input type="text" value={inputValue} onChange={(event) => setInputValue(event.target.value)} placeholder="Add Task" className="task-input"
                         onKeyPress={(e) => {
                             if (e.key === 'Enter') {
-                                addTask();
+                                checkEdit();
                             }
                         }}
                     />
 
                     {/* Button */}
-                    <button onClick={addTask} className="add-button" disabled={!inputValue.trim()}  >
+                    <button onClick={checkEdit} className="add-button" disabled={!inputValue.trim()}  >
                         Add
                     </button>
                 </div>
@@ -69,6 +91,9 @@ function TodoApp() {
                                         viewBox="0 0 24 24"
                                         strokeWidth={1.5}
                                         stroke="currentColor"
+                                        onClick={() => {
+                                            startEdit(task, index)
+                                        }}
                                     >
                                         <path
                                             strokeLinecap="round"
