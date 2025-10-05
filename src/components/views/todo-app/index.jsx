@@ -10,14 +10,16 @@ function TodoApp() {
         setTask(tempTasks)
         setInputValue('');
     }
-
-
+    
     function deleteTask(index) {
-        console.log(index)
+        console.log("delete Task index", index)
         const tempTask = [...tasks]
         tempTask.splice(index, 1)
         setTask(tempTask)
     }
+
+
+
     return (
         <div className="todo-container">
             {/* Todo Card/Box */}
