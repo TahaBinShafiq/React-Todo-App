@@ -44,18 +44,13 @@ function TodoApp() {
 
     return (
         <div className="todo-container">
-            {/* Todo Card/Box */}
             <div className="todo-card">
-
-                {/* Heading */}
                 <h1 className="todo-heading">
                     React Todo App
                 </h1>
-
-                {/* Input aur Button ka Container */}
                 <div className="input-group">
-                    {/* Input Field */}
-                    <input type="text" value={inputValue} onChange={(event) => setInputValue(event.target.value)} placeholder="Add Task" className="task-input"
+                    <input type="text" value={inputValue} onChange={(event) => setInputValue(event.target.value)}
+                     placeholder={editTask !== null ? "Edit Task" : "Add Task" } className="task-input"
                         onKeyPress={(e) => {
                             if (e.key === 'Enter') {
                                 checkEdit();
