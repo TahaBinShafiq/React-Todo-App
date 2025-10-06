@@ -50,17 +50,16 @@ function TodoApp() {
                 </h1>
                 <div className="input-group">
                     <input type="text" value={inputValue} onChange={(event) => setInputValue(event.target.value)}
-                     placeholder={editTask !== null ? "Edit Task" : "Add Task" } className="task-input"
+                        placeholder={editTask !== null ? "Edit Task" : "Add Task"} className="task-input"
                         onKeyPress={(e) => {
                             if (e.key === 'Enter') {
                                 checkEdit();
                             }
                         }}
                     />
-
                     {/* Button */}
                     <button onClick={checkEdit} className="add-button" disabled={!inputValue.trim()}  >
-                        Add
+                        {editTask !== null ? "Edit" : "Add"}
                     </button>
                 </div>
 
